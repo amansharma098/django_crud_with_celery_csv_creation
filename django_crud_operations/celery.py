@@ -13,7 +13,7 @@ app = Celery('django_crud_operations')
 #   should have a `CELERY_` prefix.
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.conf.beat_schedule = {
-    'every_15_seconds':{
+    'every_1000_seconds':{
         'task':'student_register.tasks.make_csv',
         'schedule':1000,
     }
@@ -25,4 +25,4 @@ app.autodiscover_tasks()
 
 @app.task(bind=True)
 def debug_task(self):
-    print(f'Request: {self.request!r}')
+    print('Request: {0!r}'.format(self.request))

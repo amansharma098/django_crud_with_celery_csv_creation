@@ -25,7 +25,7 @@ def student_form(request, id=0):
         return render(request, "student_register/student_form.html", {'form': form})
     else:
         if id == 0:
-            form = StudentForm(request.POST)
+           form = StudentForm(request.POST)
         else:
             student = Student.objects.get(pk=id)
             form = StudentForm(request.POST,instance= student)

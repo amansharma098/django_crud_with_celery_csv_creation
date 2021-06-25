@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'student_register',
     'crispy_forms',
     'django_celery_beat',
+    'rest_framework',
+    'rest_endpoints',
+    'drf_yasg',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
